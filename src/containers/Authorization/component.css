@@ -1,9 +1,17 @@
+body {
+    position: relative;
+    height: 100vh;
+    background-color: rgb(255, 222, 255) !important;
+}
 .authorization-container {
     margin: auto;
     display: flex;
     flex-flow: column wrap;
     width: 300px;
-    margin-top: calc(50vh - 200px);
+    top: calc(50vh - 200px);
+    border: 1px solid grey;
+    position: relative;
+    box-shadow: 0 0 25px 1px black;
 }
 
 .authorization-container input {

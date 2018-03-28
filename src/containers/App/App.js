@@ -17,7 +17,7 @@ class App extends Component {
         table: []
     }
 
-    addRow = () => {
+    addGuest = () => {
         const { dispatch } = this.props;
 
         let col1 = ReactDOM.findDOMNode(this.refs.col1);
@@ -32,6 +32,11 @@ class App extends Component {
             alert('Inputs must be not empty');
         }
     }
+    
+    logOut = () => {
+        const { dispatch } = this.props;
+        dispatch(logOut())
+    }
 
     setColor = () => {
         const { dispatch } = this.props;
@@ -40,17 +45,13 @@ class App extends Component {
         dispatch(setStoreColor(color))
     }
 
-    logOut = () => {
-        const { dispatch } = this.props;
-        dispatch(logOut())
-    }
 
     render() {
         const { table, color } = this.props;
         return (
             <div>
                 <Button className='btn-danger float-right' onClick={this.logOut}>Log Out</Button>
-                <h2 className='text-center'>Data table</h2>
+                <h2 className='text-center'>Guests table</h2>
                 <Table dark className='text-center data-table'>
                     <thead>
                         <tr>
@@ -77,7 +78,7 @@ class App extends Component {
                         <br />
                     <Input ref='col2' />
                         <br />
-                    <Button onClick={this.addRow}>Add</Button>
+                    <Button onClick={this.addGuest}>Add</Button>
                         <hr/>
                     <h4>HEX Color of Wedding</h4>
                     <InputGroup>
